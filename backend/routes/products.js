@@ -10,9 +10,9 @@ const VALID_SORTS = ['priceLowHigh', 'topRated'];
 
 // Server-side validation: returns { criteria, sortBy } or throws { status, message }.
 function validate(input) {
-  const { categories, minPrice, maxPrice, minRating, sortBy } = input;
+  const { categories, category, minPrice, maxPrice, minRating, sortBy } = input;
 
-  let cats = categories;
+  let cats = categories ?? category; // singular `category` accepted as alias
   if (typeof cats === 'string') cats = cats.split(',').filter(Boolean); // GET ?categories=a,b
   if (cats != null) {
     if (!Array.isArray(cats)) throw { status: 400, message: 'categories must be an array' };
