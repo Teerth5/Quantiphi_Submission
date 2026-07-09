@@ -20,3 +20,39 @@ body { margin: 0; font-family: system-ui, sans-serif; color: #222; }
 
 .content { flex: 1; padding: 16px 24px; }
 .error { color: #c00; }
+
+.dual-slider { position: relative; height: 24px; }
+.dual-slider input[type="range"] {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  background: none;
+  pointer-events: none; /* track ignores clicks; thumbs re-enable below */
+  -webkit-appearance: none;
+}
+.dual-slider input[type="range"]::-webkit-slider-thumb {
+  pointer-events: auto;
+  -webkit-appearance: none;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: #2563eb;
+  cursor: grab;
+  border: none;
+  margin-top: -6px;
+}
+.dual-slider input[type="range"]::-moz-range-thumb {
+  pointer-events: auto;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: #2563eb;
+  cursor: grab;
+  border: none;
+}
+.dual-slider input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px; background: #ddd; border-radius: 2px;
+}
+.dual-slider input[type="range"]::-moz-range-track {
+  height: 4px; background: #ddd; border-radius: 2px;
+}
+.price-labels { display: flex; justify-content: space-between; font-size: 14px; margin-top: 4px; }

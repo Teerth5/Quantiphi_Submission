@@ -1,3 +1,5 @@
+import PriceSlider from './PriceSlider';
+
 const CATEGORIES = ['Electronics', 'Apparel', 'Footwear'];
 
 export default function Sidebar({ filters, onChange }) {
@@ -25,6 +27,12 @@ export default function Sidebar({ filters, onChange }) {
           </label>
         ))}
       </section>
+
+      <PriceSlider
+        minPrice={filters.minPrice}
+        maxPrice={filters.maxPrice}
+        onChange={(minPrice, maxPrice) => onChange({ ...filters, minPrice, maxPrice })}
+      />
     </aside>
   );
 }
