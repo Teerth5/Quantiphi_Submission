@@ -3,6 +3,7 @@ import { fetchProducts } from './api';
 import Sidebar from './components/Sidebar';
 import ProductGrid from './components/ProductGrid';
 import SortDropdown from './components/SortDropdown';
+import EmptyState from './components/EmptyState';
 import './App.css';
 
 const DEFAULT_FILTERS = {
@@ -15,7 +16,7 @@ const DEFAULT_FILTERS = {
 
 export default function App() {
   const [filters, setFilters] = useState(DEFAULT_FILTERS);
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(null); // null = first fetch pending
   const [error, setError] = useState(null);
 
   // Instant feedback, no submit button: every filter change triggers a backend call.
@@ -34,14 +35,20 @@ export default function App() {
       <Sidebar filters={filters} onChange={setFilters} />
       <main className="content">
         {error && <p className="error">{error}</p>}
-        <div className="toolbar">
-          <p className="count">{products.length} products</p>
-          <SortDropdown
-            sortBy={filters.sortBy}
-            onChange={(sortBy) => setFilters({ ...filters, sortBy })}
-          />
-        </div>
-        <ProductGrid products={products} />
+        {products == null ? null : products.length === 0 && !error ? (
+          <EmptyState onReset={() => setFilters(DEFAULT_FILTERS)} />
+        ) : (
+          <>
+            <div className="toolbar">
+              <p className="count">{products.length} products</p>
+              <SortDropdown
+                sortBy={filters.sortBy}
+                onChange={(sortBy) => setFilters({ ...filters, sortBy })}
+              />
+            </div>
+            <ProductGrid products={products} />
+          </>
+        )}
       </main>
     </div>
   );
