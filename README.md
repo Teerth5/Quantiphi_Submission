@@ -202,17 +202,21 @@ curl -s "http://localhost:5000/api/products?categories=Apparel&minPrice=99999&ma
 
 ## Screenshots
 
-Default product grid:
+Default product grid with real product images:
 
 ![Default product grid](docs/screenshots/default-grid.png)
 
-Filtered results with sidebar controls active:
+Filtered results with sidebar controls active and both price handles moved:
 
 ![Filtered product results](docs/screenshots/filtered-results.png)
 
 Zero-match empty state with reset action:
 
 ![Zero-match empty state](docs/screenshots/zero-match.png)
+
+Product card close-up:
+
+![Product card close-up](docs/screenshots/card-closeup.png)
 
 ## Assessment Compliance
 
