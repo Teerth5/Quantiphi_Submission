@@ -1,0 +1,6 @@
+node_modules/
+Git.txt
+*.txt
+*.pdf
+dist/
+.env
