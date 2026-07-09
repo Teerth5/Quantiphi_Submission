@@ -4,7 +4,7 @@ Deadline: 09:40 PM, 09 July. Repo: https://github.com/Teerth5/Quantiphi_Submissi
 
 ## Checklist
 - [x] S1. .gitignore (node_modules, token .txt), remote confirmed, initial commit + push
-- [ ] S2. Scaffold /backend (Express) + /frontend (Vite React), both start clean
+- [x] S2. Scaffold /backend (Express) + /frontend (Vite React), both start clean
 - [ ] B1. backend/data/products.js — 12+ items across Electronics/Apparel/Footwear
 - [ ] B2. filterProducts(products, criteria) — category AND price range AND minRating
 - [ ] B3. Graceful null handling — empty criteria returns full inventory
@@ -22,3 +22,4 @@ Deadline: 09:40 PM, 09 July. Repo: https://github.com/Teerth5/Quantiphi_Submissi
 ## Notes
 (append per item: what changed + time)
 - S1 done: .gitignore (node_modules, *.txt token, *.pdf), remote origin set with token, initial commit d64dca3 pushed to main.
+- S2 done: backend/ Express (health endpoint tested {"ok":true} on :5000), frontend/ Vite React scaffold (dev server HTTP 200 on :5173). Note: first scaffold attempt gave vanilla-ts, re-scaffolded with react template.
