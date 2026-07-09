@@ -42,3 +42,4 @@ Deadline: 09:40 PM, 09 July. Repo: https://github.com/Teerth5/Quantiphi_Submissi
 
 ## Audit fixes (from AUDIT_REPORT.md)
 - AUDIT-1 High, credential exposure, FIXED (21:16): before — remote URL embedded the token in .git/config plaintext. After — remote set to https://Teerth5@github.com/... (username only, no secret), token stored in Git Credential Manager (credential.helper=manager, seeded via git credential approve, never printed). Verified: `git remote -v` shows no token; grep of .git/config for github_pat/ghp_ returns nothing; `git push` succeeds via GCM with no token typed.
+- AUDIT-2 Medium, final Vite build unverified by auditor, FIXED (21:18): `npm run build` on committed main → ✓ built in 525ms, bundle 194.29 kB. dist/ stays gitignored.
