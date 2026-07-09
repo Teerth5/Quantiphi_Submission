@@ -18,10 +18,15 @@ export default function App() {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
 
+  // Instant feedback, no submit button: every filter change triggers a backend call.
+  // 250ms debounce collapses rapid slider drags into one request (imperceptible on clicks).
   useEffect(() => {
-    fetchProducts(filters)
-      .then((data) => { setProducts(data.products); setError(null); })
-      .catch((e) => setError(e.message));
+    const t = setTimeout(() => {
+      fetchProducts(filters)
+        .then((data) => { setProducts(data.products); setError(null); })
+        .catch((e) => setError(e.message));
+    }, 250);
+    return () => clearTimeout(t);
   }, [filters]);
 
   return (

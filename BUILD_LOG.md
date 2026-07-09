@@ -15,7 +15,7 @@ Deadline: 09:40 PM, 09 July. Repo: https://github.com/Teerth5/Quantiphi_Submissi
 - [x] F3. Min star rating radios (1-5)
 - [x] F4. Product grid cards (image, price, rating, name)
 - [x] F5. Sort By dropdown top-right of grid
-- [ ] F6. Instant feedback, no submit button, slider debounced ~250ms
+- [x] F6. Instant feedback, no submit button, slider debounced ~250ms
 - [ ] F7. Empty state: "No items match your criteria." + Reset filters button
 - [ ] INTEGRATION. Full end-to-end run-through, commit + push
 
@@ -36,3 +36,4 @@ Deadline: 09:40 PM, 09 July. Repo: https://github.com/Teerth5/Quantiphi_Submissi
 - F3 done (21:05): RatingFilter radios 1-5 (single-select via shared name + single state value). Build clean; minRating 4.5 → 5 items verified through proxy.
 - F4 done (21:08): ProductGrid + ProductCard (image, ₹ price, ★ stars + numeric, name), responsive auto-fill grid. Build clean. Committed 65a3c21 (log tick was missed there, folded into F5 commit).
 - F5 done (21:10): SortDropdown top-right of grid in a toolbar row — Default / Price: Low to High / Top Rated First. sortBy=priceLowHigh round-trip returns Flip Flops ₹299 first ✓.
+- F6 done (21:13): useEffect on [filters] with 250ms setTimeout + cleanup — every control change auto-fetches, rapid slider drags collapse to one request, no submit button anywhere. Headless-Edge screenshot confirms grid populated from backend on load (sidebar, slider, radios, 15 cards, sort dropdown all render).
