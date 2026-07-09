@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchProducts } from './api';
 import Sidebar from './components/Sidebar';
+import ProductGrid from './components/ProductGrid';
 import './App.css';
 
 const DEFAULT_FILTERS = {
@@ -27,12 +28,8 @@ export default function App() {
       <Sidebar filters={filters} onChange={setFilters} />
       <main className="content">
         {error && <p className="error">{error}</p>}
-        <p>{products.length} products</p>
-        <ul>
-          {products.map((p) => (
-            <li key={p.id}>{p.name} — ₹{p.price} — {p.rating}★</li>
-          ))}
-        </ul>
+        <p className="count">{products.length} products</p>
+        <ProductGrid products={products} />
       </main>
     </div>
   );

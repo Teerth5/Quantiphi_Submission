@@ -56,3 +56,22 @@ body { margin: 0; font-family: system-ui, sans-serif; color: #222; }
   height: 4px; background: #ddd; border-radius: 2px;
 }
 .price-labels { display: flex; justify-content: space-between; font-size: 14px; margin-top: 4px; }
+
+.count { color: #666; font-size: 14px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+.card {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+.card img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+.card-body { padding: 10px 12px; display: flex; flex-direction: column; gap: 4px; }
+.card .price { font-weight: 700; font-size: 16px; }
+.card .stars { color: #f59e0b; font-size: 14px; }
+.card .stars small { color: #888; }
+.card h4 { margin: 0; font-size: 14px; font-weight: 500; color: #333; }
