@@ -10,7 +10,7 @@ Deadline: 09:40 PM, 09 July. Repo: https://github.com/Teerth5/Quantiphi_Submissi
 - [x] B3. Graceful null handling — empty criteria returns full inventory
 - [x] B4. sortProducts(products, sortBy) — priceLowHigh, topRated, default original
 - [x] B5. /api/products endpoint — validate, filter first, sort second
-- [ ] F1. Sticky left sidebar with Category checklist
+- [x] F1. Sticky left sidebar with Category checklist
 - [ ] F2. Dual-point price range slider
 - [ ] F3. Min star rating radios (1-5)
 - [ ] F4. Product grid cards (image, price, rating, name)
@@ -31,3 +31,4 @@ Deadline: 09:40 PM, 09 July. Repo: https://github.com/Teerth5/Quantiphi_Submissi
 - B4 done (20:47): sortProducts priceLowHigh ascending ✓, topRated descending ✓, default preserves order ✓.
 - INCIDENT 2: remote URL lost its token (stripped externally); restored via set-url from Git.txt. If push asks for username, re-run the restore.
 - B5 done (20:52): GET+POST /api/products, validates categories/prices/rating/sortBy server-side, filters then sorts. 6 curl checks pass incl. 400s for minRating=9, sortBy=nope, minPrice>maxPrice.
+- F1 done (20:58): App layout + sticky sidebar (position:sticky top:0 100vh) + category checkboxes wired to POST /api/products via vite proxy. Verified: HTTP 200, proxy filter Apparel→5 items, vite build clean. Temp list rendering until F4 grid.
