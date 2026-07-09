@@ -9,7 +9,7 @@ Deadline: 09:40 PM, 09 July. Repo: https://github.com/Teerth5/Quantiphi_Submissi
 - [x] B2. filterProducts(products, criteria) — category AND price range AND minRating
 - [x] B3. Graceful null handling — empty criteria returns full inventory
 - [x] B4. sortProducts(products, sortBy) — priceLowHigh, topRated, default original
-- [ ] B5. /api/products endpoint — validate, filter first, sort second
+- [x] B5. /api/products endpoint — validate, filter first, sort second
 - [ ] F1. Sticky left sidebar with Category checklist
 - [ ] F2. Dual-point price range slider
 - [ ] F3. Min star rating radios (1-5)
@@ -29,3 +29,5 @@ Deadline: 09:40 PM, 09 July. Repo: https://github.com/Teerth5/Quantiphi_Submissi
 - B3 done: backend/test.js assert suite — empty {}, missing arg, and cleared-null criteria all return 15/15; combined criteria still intersects. All pass.
 - NOTE: Codex runs in parallel on branch docs-audit (README/audit). My work stays on main; always `git checkout main` before committing. Do not reset docs-audit again.
 - B4 done (20:47): sortProducts priceLowHigh ascending ✓, topRated descending ✓, default preserves order ✓.
+- INCIDENT 2: remote URL lost its token (stripped externally); restored via set-url from Git.txt. If push asks for username, re-run the restore.
+- B5 done (20:52): GET+POST /api/products, validates categories/prices/rating/sortBy server-side, filters then sorts. 6 curl checks pass incl. 400s for minRating=9, sortBy=nope, minPrice>maxPrice.
