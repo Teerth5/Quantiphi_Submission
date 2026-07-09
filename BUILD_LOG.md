@@ -13,8 +13,8 @@ Deadline: 09:40 PM, 09 July. Repo: https://github.com/Teerth5/Quantiphi_Submissi
 - [x] F1. Sticky left sidebar with Category checklist
 - [x] F2. Dual-point price range slider
 - [x] F3. Min star rating radios (1-5)
-- [ ] F4. Product grid cards (image, price, rating, name)
-- [ ] F5. Sort By dropdown top-right of grid
+- [x] F4. Product grid cards (image, price, rating, name)
+- [x] F5. Sort By dropdown top-right of grid
 - [ ] F6. Instant feedback, no submit button, slider debounced ~250ms
 - [ ] F7. Empty state: "No items match your criteria." + Reset filters button
 - [ ] INTEGRATION. Full end-to-end run-through, commit + push
@@ -34,3 +34,5 @@ Deadline: 09:40 PM, 09 July. Repo: https://github.com/Teerth5/Quantiphi_Submissi
 - F1 done (20:58): App layout + sticky sidebar (position:sticky top:0 100vh) + category checkboxes wired to POST /api/products via vite proxy. Verified: HTTP 200, proxy filter Apparel→5 items, vite build clean. Temp list rendering until F4 grid.
 - F2 done (21:02): PriceSlider — two overlaid native range inputs (0-25000 step 100), min/max clamp to never cross, live ₹ labels. Build clean; price criteria round-trip verified (1000-3000 → 7 items).
 - F3 done (21:05): RatingFilter radios 1-5 (single-select via shared name + single state value). Build clean; minRating 4.5 → 5 items verified through proxy.
+- F4 done (21:08): ProductGrid + ProductCard (image, ₹ price, ★ stars + numeric, name), responsive auto-fill grid. Build clean. Committed 65a3c21 (log tick was missed there, folded into F5 commit).
+- F5 done (21:10): SortDropdown top-right of grid in a toolbar row — Default / Price: Low to High / Top Rated First. sortBy=priceLowHigh round-trip returns Flip Flops ₹299 first ✓.
