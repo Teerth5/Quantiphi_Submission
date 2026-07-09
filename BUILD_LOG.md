@@ -17,7 +17,7 @@ Deadline: 09:40 PM, 09 July. Repo: https://github.com/Teerth5/Quantiphi_Submissi
 - [x] F5. Sort By dropdown top-right of grid
 - [x] F6. Instant feedback, no submit button, slider debounced ~250ms
 - [x] F7. Empty state: "No items match your criteria." + Reset filters button
-- [ ] INTEGRATION. Full end-to-end run-through, commit + push
+- [x] INTEGRATION. Full end-to-end run-through, commit + push
 
 ## Notes
 (append per item: what changed + time)
@@ -38,3 +38,4 @@ Deadline: 09:40 PM, 09 July. Repo: https://github.com/Teerth5/Quantiphi_Submissi
 - F5 done (21:10): SortDropdown top-right of grid in a toolbar row — Default / Price: Low to High / Top Rated First. sortBy=priceLowHigh round-trip returns Flip Flops ₹299 first ✓.
 - F6 done (21:13): useEffect on [filters] with 250ms setTimeout + cleanup — every control change auto-fetches, rapid slider drags collapse to one request, no submit button anywhere. Headless-Edge screenshot confirms grid populated from backend on load (sidebar, slider, radios, 15 cards, sort dropdown all render).
 - F7 done (21:19): EmptyState replaces toolbar+grid when count=0 — exact text "No items match your criteria." + Reset filters → DEFAULT_FILTERS. Screenshot-verified by temporarily forcing zero-match defaults (then reverted). null-guard prevents empty-state flash before first fetch.
+- INTEGRATION done (21:22): backend/test.js passes + 7 combos through the vite proxy (the exact UI path): all-empty→15, multi-category+priceAsc, category+price+topRated, rating+sort, tight price window→1, zero-match→0, all-filters-wide+topRated→15 correctly ordered. Empty/reset path covered in F7. ALL CHECKLIST ITEMS COMPLETE.
