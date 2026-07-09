@@ -1,4 +1,5 @@
 import PriceSlider from './PriceSlider';
+import RatingFilter from './RatingFilter';
 
 const CATEGORIES = ['Electronics', 'Apparel', 'Footwear'];
 
@@ -32,6 +33,11 @@ export default function Sidebar({ filters, onChange }) {
         minPrice={filters.minPrice}
         maxPrice={filters.maxPrice}
         onChange={(minPrice, maxPrice) => onChange({ ...filters, minPrice, maxPrice })}
+      />
+
+      <RatingFilter
+        minRating={filters.minRating}
+        onChange={(minRating) => onChange({ ...filters, minRating })}
       />
     </aside>
   );

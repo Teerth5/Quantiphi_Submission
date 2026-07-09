@@ -12,7 +12,7 @@ Deadline: 09:40 PM, 09 July. Repo: https://github.com/Teerth5/Quantiphi_Submissi
 - [x] B5. /api/products endpoint — validate, filter first, sort second
 - [x] F1. Sticky left sidebar with Category checklist
 - [x] F2. Dual-point price range slider
-- [ ] F3. Min star rating radios (1-5)
+- [x] F3. Min star rating radios (1-5)
 - [ ] F4. Product grid cards (image, price, rating, name)
 - [ ] F5. Sort By dropdown top-right of grid
 - [ ] F6. Instant feedback, no submit button, slider debounced ~250ms
@@ -33,3 +33,4 @@ Deadline: 09:40 PM, 09 July. Repo: https://github.com/Teerth5/Quantiphi_Submissi
 - B5 done (20:52): GET+POST /api/products, validates categories/prices/rating/sortBy server-side, filters then sorts. 6 curl checks pass incl. 400s for minRating=9, sortBy=nope, minPrice>maxPrice.
 - F1 done (20:58): App layout + sticky sidebar (position:sticky top:0 100vh) + category checkboxes wired to POST /api/products via vite proxy. Verified: HTTP 200, proxy filter Apparel→5 items, vite build clean. Temp list rendering until F4 grid.
 - F2 done (21:02): PriceSlider — two overlaid native range inputs (0-25000 step 100), min/max clamp to never cross, live ₹ labels. Build clean; price criteria round-trip verified (1000-3000 → 7 items).
+- F3 done (21:05): RatingFilter radios 1-5 (single-select via shared name + single state value). Build clean; minRating 4.5 → 5 items verified through proxy.
