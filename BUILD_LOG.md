@@ -24,6 +24,13 @@ Deadline: 09:40 PM, 09 July. Repo: https://github.com/Teerth5/Quantiphi_Submissi
 - S1 done: .gitignore (node_modules, *.txt token, *.pdf), remote origin set with token, initial commit d64dca3 pushed to main.
 - S2 done: backend/ Express (health endpoint tested {"ok":true} on :5000), frontend/ Vite React scaffold (dev server HTTP 200 on :5173). Note: first scaffold attempt gave vanilla-ts, re-scaffolded with react template.
 - B1 done: 15 products across 3 categories (verified length=15, categories Electronics/Apparel/Footwear via node -e).
+
+## Codex parallel track
+- Docs branch: created `docs-audit` for documentation and audit prep only.
+- README draft complete: includes project title, summary, planned Express + React/Vite stack, planned architecture, and TBD setup/run sections pending final build.
+- FEATURE_MAP draft complete: requirements checklist prepared for final audit.
+- API test commands drafted in `test/api-tests.md`; not run yet because `/api/products` still needs final endpoint confirmation.
+- Security pass complete: `git check-ignore -v Git.txt` confirms the token file is ignored, `git ls-files --error-unmatch Git.txt` confirms it is untracked, and history scan found 0 exact token matches and 0 common GitHub token-pattern matches.
 - INCIDENT: an external process created+checked out branch "docs-audit" mid-session; B1 commit landed there. Fixed: fast-forwarded main, reset docs-audit to its creation point (1eb476f). Watch the current branch before every commit.
 - B2 done: filterProducts with AND-intersect of categories/minPrice/maxPrice/minRating, each applied only when provided. Unit-tested 3 criteria combos, all correct.
 - B3 done: backend/test.js assert suite — empty {}, missing arg, and cleared-null criteria all return 15/15; combined criteria still intersects. All pass.
