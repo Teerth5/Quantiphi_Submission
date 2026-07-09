@@ -7,7 +7,7 @@ Deadline: 09:40 PM, 09 July. Repo: https://github.com/Teerth5/Quantiphi_Submissi
 - [x] S2. Scaffold /backend (Express) + /frontend (Vite React), both start clean
 - [x] B1. backend/data/products.js — 12+ items across Electronics/Apparel/Footwear
 - [x] B2. filterProducts(products, criteria) — category AND price range AND minRating
-- [ ] B3. Graceful null handling — empty criteria returns full inventory
+- [x] B3. Graceful null handling — empty criteria returns full inventory
 - [ ] B4. sortProducts(products, sortBy) — priceLowHigh, topRated, default original
 - [ ] B5. /api/products endpoint — validate, filter first, sort second
 - [ ] F1. Sticky left sidebar with Category checklist
@@ -26,3 +26,4 @@ Deadline: 09:40 PM, 09 July. Repo: https://github.com/Teerth5/Quantiphi_Submissi
 - B1 done: 15 products across 3 categories (verified length=15, categories Electronics/Apparel/Footwear via node -e).
 - INCIDENT: an external process created+checked out branch "docs-audit" mid-session; B1 commit landed there. Fixed: fast-forwarded main, reset docs-audit to its creation point (1eb476f). Watch the current branch before every commit.
 - B2 done: filterProducts with AND-intersect of categories/minPrice/maxPrice/minRating, each applied only when provided. Unit-tested 3 criteria combos, all correct.
+- B3 done: backend/test.js assert suite — empty {}, missing arg, and cleared-null criteria all return 15/15; combined criteria still intersects. All pass.
