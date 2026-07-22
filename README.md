@@ -1,4 +1,4 @@
-# Quantiphi E-Commerce Product Filter
+# E-Commerce Product Filter
 
 Quantiphi E-Commerce Product Filter is a full-stack marketplace browsing interface for filtering a product inventory by category, price range, and minimum star rating. The UI updates immediately as users change controls, and the backend returns the filtered and sorted product list without requiring a manual submit action.
 
